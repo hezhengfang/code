@@ -9,15 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface Control_FunViewController : UIViewController
-
 {
-    UITextField  *nameField;
-    UITextField  *numberField;
-    
+    UITextField *nameField;
+    UITextField *numberField;
 }
-
 @property (nonatomic ,retain) IBOutlet UITextField *nameField;
 @property (nonatomic ,retain) IBOutlet UITextField *numberField;
-- (IBAction) textFieldDoneEditing:(id)sender;
-- (IBAction) backgroundTap:(id)sender;
+- (IBAction)textFieldDoneEdditing:(id)sender;
+-(IBAction)backgroundTap:(id)sender;
 @end

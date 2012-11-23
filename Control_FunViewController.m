@@ -5,12 +5,10 @@
 //  Created by geine on 11/23/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
-//  this is my first_name
-//
+
 #import "Control_FunViewController.h"
 
 @implementation Control_FunViewController
-
 @synthesize nameField;
 @synthesize numberField;
 
@@ -22,11 +20,11 @@
 
 }
 
--(IBAction)textFieldDoneEditing:(id)sender
+- (IBAction)textFieldDoneEdditing:(id)sender
 {
     [sender resignFirstResponder];
-
 }
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
