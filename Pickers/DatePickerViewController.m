@@ -2,50 +2,52 @@
 //  DatePickerViewController.m
 //  Pickers
 //
-//  Created by geine on 11/27/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Created by cs Siteview on 12-11-7.
+//  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "DatePickerViewController.h"
 
+
 @implementation DatePickerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize datePicker;
 
-- (void)didReceiveMemoryWarning
+- (IBAction)buttonPressed
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+    NSData *selected = [datePicker date];
     
-    // Release any cached data, images, etc that aren't in use.
+    NSString *message = [[NSString alloc] initWithFormat:
+                         @"The date and time you selected is: %@",selected];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Date and Time Selected!"
+                          message:message delegate:nil
+                          cancelButtonTitle:@"Yes,I did!"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    [message release];
 }
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
+    NSData *now = [[NSData alloc] init];
+    //[datePicker setDate:now animated:NO];
+    [now release]; 
+    
+    //[datePicker setDate:[datePicker date] animated:NO];
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    self.datePicker = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)dealloc
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [super dealloc];
 }
 
 @end

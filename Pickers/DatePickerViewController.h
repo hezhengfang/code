@@ -2,12 +2,20 @@
 //  DatePickerViewController.h
 //  Pickers
 //
-//  Created by geine on 11/27/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Created by cs Siteview on 12-11-7.
+//  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface DatePickerViewController : UIViewController
+
+@interface DatePickerViewController : UIViewController 
+{
+    UIDatePicker    *datePicker;
+}
+
+@property (nonatomic, retain) IBOutlet UIDatePicker *datePicker;
+
+- (IBAction)buttonPressed;
 
 @end

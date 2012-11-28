@@ -2,16 +2,26 @@
 //  PickersAppDelegate.m
 //  Pickers
 //
-//  Created by geine on 11/27/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Created by cs Siteview on 12-11-7.
+//  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "PickersAppDelegate.h"
 
 @implementation PickersAppDelegate
 
-@synthesize window = _window;
-@synthesize  rootController;
+
+@synthesize window=_window;
+
+@synthesize rootController;
+
+
+/* - (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+    [_window addSubview:rootController.view];
+    [_window makeKeyAndVisible];
+}
+*/
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
