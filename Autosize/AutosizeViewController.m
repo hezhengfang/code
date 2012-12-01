@@ -2,7 +2,7 @@
 //  AutosizeViewController.m
 //  Autosize
 //
-//  Created by geine on 11/26/12.
+//  Created by geine on 12/1/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -17,45 +17,33 @@
 @synthesize button6;
 
 
+
+
 -(void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
 {
-  if(interfaceOrientation == UIInterfaceOrientationPortrait
-     || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-  {
-       button1.frame = CGRectMake(20, 20, 125, 125);
-       button2.frame = CGRectMake(175, 20, 125, 125);
-      button3.frame = CGRectMake(20, 168, 125,  125);
-       button4.frame = CGRectMake(175, 168, 125, 125);
-       button5.frame = CGRectMake(20, 315, 125, 125);
-       button6.frame = CGRectMake(175, 315, 125, 125); 
-             
-  }
-    else
-    {
-        button1.frame = CGRectMake(20, 20, 125, 125);
-        button2.frame = CGRectMake(20, 155, 125, 125);   
-        button3.frame = CGRectMake(168, 155, 125, 125); 
-        button4.frame = CGRectMake(177, 155, 125, 125);
-        button5.frame = CGRectMake(328, 20, 125, 125);
-        button6.frame = CGRectMake(328, 155, 125, 125); 
-              
-    }
-    
-    
-}
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+if(interfaceOrientation == UIInterfaceOrientationPortrait
+   ||interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
 {
-    //Return YES for supported orientations
-    return (interfaceOrientation !=
-            UIInterfaceOrientationPortraitUpsideDown);
-    //return YES;
+    button1.frame = CGRectMake(20, 20, 125, 125);
+    button2.frame = CGRectMake(175, 20, 125, 125);
+    button3.frame = CGRectMake(20, 168, 125,  125);
+    button4.frame = CGRectMake(175, 168, 125, 125);
+    button5.frame = CGRectMake(20, 315, 125, 125);
+    button6.frame = CGRectMake(175, 315, 125, 125); 
 }
+else {
+    button1.frame = CGRectMake(20, 20, 125, 125);
+    button2.frame = CGRectMake(20, 155, 125, 125);   
+    button3.frame = CGRectMake(177, 20, 125, 125); 
+    button4.frame = CGRectMake(177, 155, 125, 125);
+    button5.frame = CGRectMake(328, 20, 125, 125);
+    button6.frame = CGRectMake(328, 155, 125, 125); 
+    
 
+   
+  }
 
-
-
-
-
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -76,30 +64,24 @@
 */
 
 - (void)viewDidUnload
-{
+{   self.button1=nil;
+    self.button2= nil;
+    self.button3=nil;
+    self.button4=nil;
+    self.button5=nil;
+    self.button6= nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.button1 = nil;
-    self.button2 = nil;
-    self.button3 = nil;
-    self.button4 = nil;
-    self.button5 = nil;
-    self.button6 = nil;
-    [super viewDidUnload];
-    
 }
 
--(void) dealloc
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [button1 release];
-    [button2 release];
-    [button3 release];
-    [button4 release];
-    [button5 release];
-    
-    [button6 release];
-    
+    // Return YES for supported orientations
+   // return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return  YES;
+    return (interfaceOrientation !=
+            UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end

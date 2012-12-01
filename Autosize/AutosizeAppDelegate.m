@@ -2,7 +2,7 @@
 //  AutosizeAppDelegate.m
 //  Autosize
 //
-//  Created by geine on 11/26/12.
+//  Created by geine on 12/1/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
